@@ -32,7 +32,7 @@ test.describe('POST articles tests', async () => {
         image: articleImage,
       },
     });
-    const responseBody: { [key: string]: Object } = await response.json();
+    const responseBody: { [key: string]: string } = await response.json();
 
     // Then
     expect.soft(response.status()).toBe(expectedStatusCode);
@@ -62,6 +62,7 @@ test.describe('POST articles tests', async () => {
       headers: setHeaders,
       data: malformedJson,
     });
+
     // Then
     expect(response.status()).toBe(expectedStatusCode);
   });
